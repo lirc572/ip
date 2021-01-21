@@ -1,0 +1,14 @@
+on: [push]
+
+name: Text UI Test
+
+jobs:
+  text_ui_test:
+    name: Text UI Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run test
+        working-directory:  ${{ github.workspace }}/text-ui-test
+        run: ./runtest.sh
